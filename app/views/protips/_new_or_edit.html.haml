@@ -1,5 +1,8 @@
-.outside.editing
-  %h1.editing Editing...
+.outside.elsediting  
+  - if params[:id]
+    %h1.editing Edit protip
+  - else
+    %h1.editing Add New protip
   .wrapper
     = simple_form_for @protip, url: create_or_update_url(@protip) do |p|
       .card-container
